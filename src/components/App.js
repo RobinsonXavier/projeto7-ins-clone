@@ -1,9 +1,11 @@
 import Top from "./Top";
+import Content from "./Content";
 
 export default function App () {
     return (
-        <div class="Main-content">
+        <div class="Main-layout">
             <Top />
+            <Content />
         </div>
     )
 }
