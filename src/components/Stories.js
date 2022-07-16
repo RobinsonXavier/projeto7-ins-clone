@@ -1,14 +1,18 @@
 export default function Stories () {
+    const stories = 
+    [{perfil:"9gag" , img:"./img/9gag.svg"},
+    {perfil:"meowed" , img:"./img/meowed.svg"},
+    {perfil:"barked" , img:"./img/barked.svg"},
+    {perfil:"nathanwpylestrangeplanet" , img:"./img/nathanwpylestrangeplanet.svg"},
+    {perfil:"wawawicomics" , img:"./img/wawawicomics.svg"},
+    {perfil:"respondeai" , img:"./img/respondeai.svg"},
+    {perfil:"filomoderna" , img:"./img/filomoderna.svg"},
+    {perfil:"memeriagourmet" , img:"./img/memeriagourmet.svg"}];
     return (
         <div class ="stories">
-            <StoriesElement img ="./img/9gag.svg" perfil="9gag" />
-            <StoriesElement img ="./img/meowed.svg" perfil="meowed" />
-            <StoriesElement img ="./img/barked.svg" perfil="barked" />
-            <StoriesElement img ="./img/nathanwpylestrangeplanet.svg" perfil="nathanwpylestrangeplanet" />
-            <StoriesElement img ="./img/wawawicomics.svg" perfil="wawawicomics" />
-            <StoriesElement img ="./img/respondeai.svg" perfil="respondeai" />
-            <StoriesElement img ="./img/filomoderna.svg" perfil="filomoderna" />
-            <StoriesElement img ="./img/memeriagourmet.svg" perfil="memeriagourmet" />
+            {stories.map(storie => 
+            <StoriesElement img = {storie.img} perfil= {storie.perfil} />)}
+            <ion-icon name="chevron-forward-circle-outline"></ion-icon>
         </div>
     )
 }
