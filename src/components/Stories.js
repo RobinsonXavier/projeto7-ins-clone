@@ -12,7 +12,7 @@ export default function Stories () {
         <div class ="stories">
             {stories.map(storie => 
             <StoriesElement img = {storie.img} perfil= {storie.perfil} />)}
-            <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+            <ion-icon class="ion-off" name="chevron-forward-circle-outline"></ion-icon>
         </div>
     )
 }
