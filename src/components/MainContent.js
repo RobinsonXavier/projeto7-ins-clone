@@ -1,4 +1,6 @@
+import React from "react";
 import Stories from "./Stories";
+
 
 export default function MainContent () {
     const posts =
@@ -7,8 +9,8 @@ export default function MainContent () {
     img:'./img/luffy.webp',
     like:'./img/razoesparaacreditar.svg',
     likename:'razoesparaacreditar',
-    num:'545 mil'}
-    ,{title: 'meowed',
+    num:'545 mil'},
+    {title: 'meowed',
     icon:'./img/meowed.svg',
     img:'./img/gato-telefone.svg',
     like:'./img/respondeai.svg',
@@ -33,8 +35,21 @@ export default function MainContent () {
 }
 
 function Post (props) {
+
+    let valor = 'unlike';
+    const [like, setLike] = React.useState(valor);
+
+    function getLike () {
+        const unlike = 'unlike';
+        const liked = 'like';
+
+        like === liked ? valor = unlike : valor = liked;
+
+        setLike(valor);
+    }
+
     return (
-        <div class="post">
+        <div onClick={getLike} class="post">
             <div class="post-title">
                 <div>
                     <img src={props.icon} alt="" />
@@ -46,7 +61,7 @@ function Post (props) {
             <div class="post-interaction">
                 <div class="interactions">
                     <div>
-                        <ion-icon class ="like" name="heart-outline"></ion-icon>
+                        <ion-icon onClick={getLike} class ={like} name="heart"></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>

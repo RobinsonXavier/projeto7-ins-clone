@@ -15,16 +15,13 @@ export default function Sidebar () {
         {image:'./img/smallcutecats.svg',
         name:'smallcutecats',
         follow:'Segue você'}];
-
+    const userPerfil = 
+    {img:'./img/catanacomics.svg',
+    title:'catanacomics',
+    subtitle:'Catana' }
     return (
         <aside class="sidebar">
-            <div class="perfil">
-                <img src='./img/catanacomics.svg' alt='' />
-                <div class='user-description'>
-                    <h3>catanacomics</h3>
-                    <span>Catana</span>
-                </div>
-            </div>
+            <Perfil image= {userPerfil.img} name={userPerfil.title} subtitle = {userPerfil.subtitle} />
             <div class="suggetions">
                 <span>Sugestões para você</span>
                 <h4>Ver tudo</h4>
@@ -34,6 +31,18 @@ export default function Sidebar () {
                     <User img={element.image} name={element.name} follow={element.follow} />)}
             </div>
         </aside>
+    )
+}
+
+function Perfil (props) {
+    return (
+        <div class="perfil">
+                <img src={props.image} alt='' />
+                <div class='user-description'>
+                    <h3>{props.name}</h3>
+                    <span>{props.subtitle}</span>
+                </div>
+            </div>
     )
 }
 
