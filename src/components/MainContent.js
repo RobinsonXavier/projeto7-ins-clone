@@ -36,22 +36,15 @@ export default function MainContent () {
 
 function Post (props) {
 
-    let valor = 'unlike';
+    let valor = '';
+    const liked= 'like'
+    const unlike ='unlike'
 
-    const [like, setLike] = React.useState(valor);
-
-    function getLike () {
-
-        const unlike = 'unlike';
-        const liked = 'like';
-
-        like === liked ? valor = unlike : valor = liked;
-
-        setLike(valor);
-    }
+    const [like, setLike] = React.useState('unlike');
+    
 
     return (
-        <div onClick={getLike} class="post">
+        <div class="post">
             <div class="post-title">
                 <div>
                     <img src={props.icon} alt="" />
@@ -59,11 +52,12 @@ function Post (props) {
                 </div>
                 <span>...</span>
             </div>
-            <img src={props.img} alt="" />
+            <img onClick={() => setLike('like')} src={props.img} alt="" />
             <div class="post-interaction">
                 <div class="interactions">
                     <div>
-                        <ion-icon onClick={getLike} class ={like} name="heart"></ion-icon>
+                        <ion-icon onClick={() => like === 'like' ? setLike(unlike) : setLike(liked)} 
+                        class ={like} name="heart"></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
