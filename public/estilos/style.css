@@ -250,7 +250,7 @@ strong {
 
 .like {
     transition: all 500ms;
-    color: red;
+    color: rgb(225, 10, 10);
     font-size: 30px; 
 }
 

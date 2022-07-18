@@ -37,9 +37,11 @@ export default function MainContent () {
 function Post (props) {
 
     let valor = 'unlike';
+
     const [like, setLike] = React.useState(valor);
 
     function getLike () {
+
         const unlike = 'unlike';
         const liked = 'like';
 
